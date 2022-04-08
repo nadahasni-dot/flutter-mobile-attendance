@@ -97,6 +97,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
           Expanded(
             child: GoogleMap(
               myLocationEnabled: true,
+              mapToolbarEnabled: false,
               zoomControlsEnabled: false,
               onMapCreated: _onMapCreated,
               myLocationButtonEnabled: true,
