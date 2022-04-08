@@ -2,14 +2,14 @@ import '../models/attendance.dart';
 import '../services/database_service.dart';
 
 class AttendanceRepository {
-  Future<Attendance> create(Attendance attendance) async {
+  static Future<Attendance> create(Attendance attendance) async {
     final db = await DatabaseService.instance.database;
 
     final id = await db.insert(tableAttendances, attendance.toJson());
     return attendance.copy(id: id);
   }
 
-  Future<Attendance> readAttendance(int id) async {
+  static Future<Attendance> readAttendance(int id) async {
     final db = await DatabaseService.instance.database;
 
     final maps = await db.query(
@@ -26,7 +26,7 @@ class AttendanceRepository {
     }
   }
 
-  Future<List<Attendance>> readAllAttendances() async {
+  static Future<List<Attendance>> readAllAttendances() async {
     final db = await DatabaseService.instance.database;
 
     const orderBy = '${AttendanceFields.createdAt} ASC';

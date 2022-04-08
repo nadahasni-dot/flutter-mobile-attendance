@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
 final theme = ThemeData(
-  primarySwatch: Colors.blue,
+  brightness: Brightness.light,
+  primarySwatch: Colors.green,
+  primaryColor: Colors.greenAccent,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(shadowColor: Colors.blue),
+  ),
 );
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
-  primarySwatch: Colors.blue,
+  primarySwatch: Colors.green,
+  primaryColor: Colors.greenAccent,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(shadowColor: Colors.blue),
+  ),
 );
